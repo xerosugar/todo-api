@@ -1,0 +1,25 @@
+@default_address = http://127.0.0.1:3000
+
+###
+GET {{default_address}}/todos
+?sort=done
+###
+POST {{default_address}}/todos
+content-type: application/json
+
+{
+    "done": false,
+    "message": "Feed the cats!"
+}
+###
+GET {{default_address}}/todos/69be7c63-0002-4092-b251-5da0bd6c8d0d
+###
+PUT {{default_address}}/todos/69be7c63-0002-4092-b251-5da0bd6c8d0d
+content-type: application/json
+
+{
+    "done": true,
+    "message": "Feed the cats!"
+}
+###
+DELETE  {{default_address}}/todos/69be7c63-0002-4092-b251-5da0bd6c8d0d
